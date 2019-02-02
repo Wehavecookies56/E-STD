@@ -20,6 +20,7 @@ public class uiControler : MonoBehaviour
     public float lerpSpeed = 0.1f;
 
     public GameObject menu;
+    public GameObject inventory;
 
     private void Start()
     {
@@ -92,6 +93,12 @@ public class uiControler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             menu.SetActive(true);
+            Time.timeScale = 0;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Tab))
+        {
+            inventory.SetActive(true);
             Time.timeScale = 0;
         }
     }

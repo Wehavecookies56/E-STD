@@ -48,6 +48,8 @@ MonoBehaviour:
   - {fileID: 4308796202935116310, guid: 123ba648c6079d94eb92bb230fac16fd, type: 3}
   - {fileID: 3290584834326749255, guid: eba984b764ebcb2449cb9f388ef2a86d, type: 3}
   - {fileID: 283532953203203148, guid: 7b4f795c20bea2d4fb5bc77e1f84064b, type: 3}
+  - {fileID: 8866965034634858032, guid: 05b03fb2a23a96a4f8c714150924c77f, type: 3}
+  - {fileID: 1734685977874819795, guid: e030476323889a44f8889133638b0caf, type: 3}
   backroundSounds:
   - {fileID: 6197542631747236478, guid: 875968cde2588d1489f83a7501d87c22, type: 3}
   footstepsSound:
