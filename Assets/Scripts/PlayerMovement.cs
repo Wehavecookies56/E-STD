@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
     {
         GetInput();
         UpdateMovement();
+        soundManagerScript.audioPlayer.FootSteps(soundManagerScript.footsteps.WOOD, gameObject.transform, cc.velocity.x + cc.velocity.z);
 
     }
 
@@ -43,8 +44,8 @@ public class PlayerMovement : MonoBehaviour
     {
         xInput = Input.GetAxis("Horizontal") * speed;
         zInput = Input.GetAxis("Vertical") * speed;
-        xMouse = Input.GetAxis("Mouse X") * mouseSensitivity;
-        yMouse = Input.GetAxis("Mouse Y") * mouseSensitivity;
+        xMouse = Input.GetAxis("Mouse X") * mouseSensitivity * Time.timeScale;
+        yMouse = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.timeScale;
     }
 
     void UpdateMovement()
@@ -72,7 +73,6 @@ public class PlayerMovement : MonoBehaviour
 
         cc.Move(move + new Vector3(0, yspeed, 0) * Time.deltaTime);
         transform.Rotate(0, xMouse, 0);
-        yMouse = Input.GetAxis("Mouse Y") * mouseSensitivity;
         pitch -= yMouse;
         pitch = Mathf.Clamp(pitch, -pitchRange, pitchRange);
         Quaternion camRotation = Quaternion.Euler(pitch, 0, 0);

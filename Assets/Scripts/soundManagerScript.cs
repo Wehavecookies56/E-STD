@@ -17,6 +17,9 @@ public class soundManagerScript : MonoBehaviour
 
     public enum footsteps { WOOD };
     public GameObject[] footstepsSound;
+    public float MaxFootstepVolume;
+    private GameObject footstepsInstance;
+    bool created = false;
 
     private void Awake()
     {
@@ -51,14 +54,26 @@ public class soundManagerScript : MonoBehaviour
 
     }
 
-    public void FootStepsStart()
+    public void FootSteps(footsteps type, Transform parent, float speed)
     {
-
+        
+        if(created == false)
+        {
+            footstepsInstance = Instantiate(footstepsSound[(int)type]);
+            footstepsInstance.transform.SetParent(parent);
+            created = true;
+        }
+        
+        if(Mathf.Abs(speed) > 0.1f)
+        {
+            footstepsInstance.GetComponent<AudioSource>().volume = MaxFootstepVolume;
+        }
+        else if(Mathf.Abs(speed) < 0.1f)
+        {
+            footstepsInstance.GetComponent<AudioSource>().volume = 0f;
+        }
     }
 
-    public void FootStepsStop()
-    {
-
-    }
+    
 
 }
