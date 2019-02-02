@@ -15,6 +15,9 @@ public class soundManagerScript : MonoBehaviour
     public enum backgroundSounds { HORRORLOOP };
     public GameObject[] backroundSounds;
 
+    public enum footsteps { WOOD };
+    public GameObject[] footstepsSound;
+
     private void Awake()
     {
         if (audioPlayer == null)
@@ -45,6 +48,16 @@ public class soundManagerScript : MonoBehaviour
     {
         GameObject instance = Instantiate(backroundSounds[(int)sound]);
         instance.transform.SetParent(parent);
+
+    }
+
+    public void FootStepsStart()
+    {
+
+    }
+
+    public void FootStepsStop()
+    {
 
     }
 

@@ -148,6 +148,8 @@ MonoBehaviour:
   - {fileID: 283532953203203148, guid: 7b4f795c20bea2d4fb5bc77e1f84064b, type: 3}
   backroundSounds:
   - {fileID: 6197542631747236478, guid: 875968cde2588d1489f83a7501d87c22, type: 3}
+  footstepsSound:
+  - {fileID: 1700986237711956823, guid: 1f16bf54653ca874fac5ffae41598940, type: 3}
 --- !u!4 &378658855
 Transform:
   m_ObjectHideFlags: 0

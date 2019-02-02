@@ -19,6 +19,8 @@ public class uiControler : MonoBehaviour
     public float softIntesity = 0.2f;
     public float lerpSpeed = 0.1f;
 
+    public GameObject menu;
+
     private void Start()
     {
         hurtPannelColour = getHurtPannel.GetComponent<Image>().color;
@@ -27,6 +29,7 @@ public class uiControler : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         //you died screen
         if (playerData.INSTANCE.Health <= 0)
         {
@@ -81,6 +84,16 @@ public class uiControler : MonoBehaviour
             sanityPannel.GetComponent<Image>().color = sanityColour;
         }
         
+    }
+
+
+    private void LateUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            menu.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 }
 
