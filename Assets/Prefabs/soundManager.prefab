@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4336663508772593310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4336663508772593308}
+  - component: {fileID: 4336663508772593309}
+  m_Layer: 0
+  m_Name: soundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4336663508772593308
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4336663508772593310}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.7294598, y: 3.2565858, z: -8.968478}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4336663508772593309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4336663508772593310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ba86559f198530458ee4c2079371f7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterAudio: []
+  enviromentAudio:
+  - {fileID: 4308796202935116310, guid: 123ba648c6079d94eb92bb230fac16fd, type: 3}
+  - {fileID: 3290584834326749255, guid: eba984b764ebcb2449cb9f388ef2a86d, type: 3}
+  - {fileID: 283532953203203148, guid: 7b4f795c20bea2d4fb5bc77e1f84064b, type: 3}
+  - {fileID: 8866965034634858032, guid: 05b03fb2a23a96a4f8c714150924c77f, type: 3}
+  - {fileID: 1734685977874819795, guid: e030476323889a44f8889133638b0caf, type: 3}
+  backroundSounds:
+  - {fileID: 6197542631747236478, guid: 875968cde2588d1489f83a7501d87c22, type: 3}
+  footstepsSound:
+  - {fileID: 1700986237711956823, guid: 1f16bf54653ca874fac5ffae41598940, type: 3}
+  MaxFootstepVolume: 1
