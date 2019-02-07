@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿//Script written by Dan Sheshtanov
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ public class EditorNodeLines : MonoBehaviour
         {
             if (target != null)
             {
-                // Draws a blue line from this transform to the target
+                // Draws a line from this transform to the target
                 Gizmos.color = Color.green;
                 Gizmos.DrawLine(transform.position, target.transform.position);
             }
