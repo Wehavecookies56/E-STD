@@ -4,49 +4,47 @@ using UnityEngine;
 
 public class DoorRotate : MonoBehaviour
 {
-
-    public float rotFin = 0;
-    public float counter;
-    public float time;
-    public float timer;
-    public bool pause = true;
-
+    public float anglestop;
+    public float speed = 1;
+   
     // Use this for initialization
     void Start()
     {
-        timer = time;
+      
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (timer <= 0)
+      //if(player interact)
+      //{
+
+        
+        if(speed < 0)
         {
-            if (pause)
-            {
-                pause = false;
-                timer = time;
-            }
-            else
-            {
-                pause = true;
-                rotate();
-                timer = time;
-            }
+             if(transform.eulerAngles.y > anglestop)
+             {
+             transform.Rotate(new Vector3(0, Time.deltaTime * speed, 0));
+             }
+             else
+             {
+             transform.eulerAngles = new Vector3(transform.eulerAngles.x, anglestop, transform.eulerAngles.z);
+             }
         }
         else
         {
-            timer -= Time.deltaTime;
+            if (transform.eulerAngles.y < anglestop)
+            {
+                transform.Rotate(new Vector3(0, Time.deltaTime * speed, 0));
+            }
+            else
+            {
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, anglestop, transform.eulerAngles.z);
+            }
         }
+      //}
+    
     }
 
-    void rotate()
-    {
-        while(counter <= 90)
-        {
-            rotFin++;
-            transform.Rotate(new Vector3(0, rotFin, 0 ));
-            counter++;
-        }
-    }
+  
 }
