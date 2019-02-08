@@ -66,14 +66,14 @@ public class PlayerMovement : MonoBehaviour
 
         if (cc.isGrounded)
         {
-            if (Input.GetButtonDown("Jump"))
+            /* if (Input.GetButtonDown("Jump"))
             {
                 yspeed = 15f;
             }
             else
             {
                 yspeed = gravity * Time.deltaTime;
-            }
+            }*/
         }
         else
         {
