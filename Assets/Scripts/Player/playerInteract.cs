@@ -1,6 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
+[System.Serializable]
+public class InteractEvent : UnityEvent<GameObject> {
+    
+}
 
 public class playerInteract : MonoBehaviour {
 
@@ -9,8 +15,12 @@ public class playerInteract : MonoBehaviour {
     public float distance = 500;
     GameObject lastLookedAt;
 
+    [SerializeField]
+    public InteractEvent onInteract;
+
     void Start() {
-        
+        if (onInteract == null)
+            onInteract = new InteractEvent();
     }
 
     void Update() {
@@ -23,11 +33,21 @@ public class playerInteract : MonoBehaviour {
             lastLookedAt = lookedAt;
             //Boolean_446AB9C2 is the id for the "enabled" property in the item highlight shader
             lookedAt.GetComponent<MeshRenderer>().material.SetFloat("Boolean_446AB9C2", 1);
+            if (Input.GetButtonDown("Fire1")) {
+                onInteract.Invoke(lookedAt);
+            }
         } else {
             if (lastLookedAt != null) {
                 lastLookedAt.GetComponent<MeshRenderer>().material.SetFloat("Boolean_446AB9C2", 0);
                 lastLookedAt = null;
             }
+        }
+    }
+
+    public void pickUpItem(GameObject item) {
+        //Add to inventory here
+        if (item.GetComponent<objectScript>().data.OjbectType == Type.PICKUP) {
+            Debug.Log("Pick up " + item.name);
         }
     }
 }
