@@ -12,7 +12,9 @@ public class uiControler : MonoBehaviour
     private Color hurtPannelColour;
 
     public GameObject sanityPannel;
+    public GameObject sanityDrain;
     private Color sanityColour;
+    
 
     public float hardIntesity = 0.6f;
     public float mediumIntesity = 0.4f;
@@ -37,54 +39,20 @@ public class uiControler : MonoBehaviour
             deathPannel.SetActive(true);
         }
 
-        //screen fade to red
-        if (playerData.INSTANCE.Health <= 1)
-        {
-            hurtPannelColour.a = Mathf.Lerp(hurtPannelColour.a, hardIntesity, lerpSpeed);
-            getHurtPannel.GetComponent<Image>().color = hurtPannelColour;
-            getHurtRed.GetComponent<Image>().color = hurtPannelColour;
-        }
-        else if (playerData.INSTANCE.Health <= 3)
-        {
-            hurtPannelColour.a = Mathf.Lerp(hurtPannelColour.a, mediumIntesity, lerpSpeed);
-            getHurtPannel.GetComponent<Image>().color = hurtPannelColour;
-            getHurtRed.GetComponent<Image>().color = hurtPannelColour;
-        }
-        else if (playerData.INSTANCE.Health <= 5)
-        {
-            hurtPannelColour.a = Mathf.Lerp(hurtPannelColour.a, softIntesity, lerpSpeed);
-            getHurtPannel.GetComponent<Image>().color = hurtPannelColour;
-        }
-        else if (playerData.INSTANCE.Health > 5)
-        {
-            hurtPannelColour.a = Mathf.Lerp(hurtPannelColour.a, 0f, lerpSpeed);
-            getHurtPannel.GetComponent<Image>().color = hurtPannelColour;
-            getHurtRed.GetComponent<Image>().color = hurtPannelColour;
-        }
+        //hurt ui
+        hurtPannelColour.a = (1 - (playerData.INSTANCE.Health / 10));
+        getHurtPannel.GetComponent<Image>().color = hurtPannelColour;
+        hurtPannelColour.a = (0.6f - (playerData.INSTANCE.Health / 10));
+        getHurtRed.GetComponent<Image>().color = hurtPannelColour;
 
-        //loosing sanity
-        if (playerData.INSTANCE.Sanity <= 1)
-        {
-            sanityColour.a = Mathf.Lerp(sanityColour.a, hardIntesity, lerpSpeed);
-            sanityPannel.GetComponent<Image>().color = sanityColour;
-        }
-        else if (playerData.INSTANCE.Sanity <= 3)
-        {
-            sanityColour.a = Mathf.Lerp(sanityColour.a, mediumIntesity, lerpSpeed);
-            sanityPannel.GetComponent<Image>().color = sanityColour;
-        }
-        else if (playerData.INSTANCE.Sanity <= 5)
-        {
-            sanityColour.a = Mathf.Lerp(sanityColour.a, softIntesity, lerpSpeed);
-            sanityPannel.GetComponent<Image>().color = sanityColour;
-
-        }
-        else if (playerData.INSTANCE.Sanity > 5)
-        {
-            sanityColour.a = Mathf.Lerp(sanityColour.a, 0f, lerpSpeed);
-            sanityPannel.GetComponent<Image>().color = sanityColour;
-        }
+        //crazy ui
+        sanityColour.a = 0.6f - (playerData.INSTANCE.Sanity / 10);
+        sanityPannel.GetComponent<Image>().color = sanityColour;
+        sanityColour = sanityDrain.GetComponent<Image>().color;
+        sanityColour.a = 1 - (playerData.INSTANCE.Sanity / 10);
+        sanityDrain.GetComponent<Image>().color = sanityColour;
         
+
     }
 
 
