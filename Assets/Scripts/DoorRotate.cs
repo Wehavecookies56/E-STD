@@ -16,8 +16,7 @@ public class DoorRotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      //if(player interact)
-      //{
+     
 
         
         if(speed < 0)
@@ -42,7 +41,7 @@ public class DoorRotate : MonoBehaviour
                 transform.eulerAngles = new Vector3(transform.eulerAngles.x, anglestop, transform.eulerAngles.z);
             }
         }
-      //}
+      
     
     }
 
