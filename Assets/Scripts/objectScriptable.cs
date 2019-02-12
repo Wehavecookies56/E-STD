@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Type {
+public enum ObjectType {
     OPEN, PICKUP
 }
 
@@ -11,7 +11,7 @@ public class objectScriptable : ScriptableObject {
     [SerializeField]
     private string objectName;
     [SerializeField]
-    private Type type;
+    private ObjectType type;
 
     public string ObjectName {
         get {
@@ -19,7 +19,7 @@ public class objectScriptable : ScriptableObject {
         }
     }
 
-    public Type OjbectType {
+    public ObjectType Type {
         get {
             return type;
         }
