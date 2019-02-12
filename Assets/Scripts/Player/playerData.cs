@@ -5,7 +5,7 @@ using UnityEngine;
 public class playerData : MonoBehaviour {
     //Default values are set to the values on the character sheet
     public float Health { get; set; } = 10;
-    public float Sanity { get; set; } = 5;
+    public float Sanity { get; set; } = 10;
     //Traits are readonly
     public int Strength { get; } = 2;
     public int Agility { get; } = 3;
