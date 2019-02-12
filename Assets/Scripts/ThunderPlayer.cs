@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class ThunderPlayer : MonoBehaviour
 {
+    //player reference
+    GameObject player;
     //particle system component reference
     ParticleSystem ps;
     //array to hold lightning particles, there can only ever be 1 at a time
@@ -14,6 +16,7 @@ public class ThunderPlayer : MonoBehaviour
     
     void Start()
     {
+        player = GameObject.Find("Player");
         ps = GetComponent<ParticleSystem>();
     }
 
@@ -23,11 +26,32 @@ public class ThunderPlayer : MonoBehaviour
 
         if (!needReset) //if particle hasn't already been detected
         {
-
             if (numOfParticles > 0)
             {
-                Debug.Log("Triggered");
                 needReset = true;
+                soundManagerScript.enviromentSounds thunderSound;
+                int randomIndex = Random.Range((int)0, (int)4);
+
+                switch (randomIndex)
+                {
+                    case 0: thunderSound = soundManagerScript.enviromentSounds.THUNDER1;
+                        soundManagerScript.audioPlayer.playOnce(thunderSound, player.transform);
+                        break;
+                    case 1:
+                        thunderSound = soundManagerScript.enviromentSounds.THUNDER2;
+                        soundManagerScript.audioPlayer.playOnce(thunderSound, player.transform);
+                        break;
+                    case 2:
+                        thunderSound = soundManagerScript.enviromentSounds.THUNDER3;
+                        soundManagerScript.audioPlayer.playOnce(thunderSound, player.transform);
+                        break;
+                    case 3:
+                        thunderSound = soundManagerScript.enviromentSounds.THUNDER4;
+                        soundManagerScript.audioPlayer.playOnce(thunderSound, player.transform);
+                        break;
+                    default:
+                        break;
+                }
             }
         }
         else

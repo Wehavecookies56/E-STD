@@ -6,10 +6,10 @@ public class soundManagerScript : MonoBehaviour
 {
     public static soundManagerScript audioPlayer { get; private set; }
 
-    public enum enviromentSounds { DOOROPEN, THUNDER1, THUNDER2, GHOSTSCREAM, POTBREAK };
+    public enum enviromentSounds { DOOROPEN, THUNDER1, THUNDER2, GHOSTSCREAM, POTBREAK, THUNDER3, THUNDER4 };
     public GameObject[] enviromentAudio;
 
-    public enum backgroundSounds { HORRORLOOP };
+    public enum backgroundSounds { HORRORLOOP, RAINLOOP };
     public GameObject[] backroundSounds;
 
     public enum footsteps { WOOD };
@@ -34,6 +34,7 @@ public class soundManagerScript : MonoBehaviour
     private void Start()
     {
         startLoop(backgroundSounds.HORRORLOOP, gameObject.transform);
+        startLoop(backgroundSounds.RAINLOOP, gameObject.transform);
     }
 
     public void playOnce(enviromentSounds sound, Transform position)
