@@ -61,13 +61,13 @@ public class uiControler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             menu.SetActive(true);
-            //Time.timeScale = 0;
+            Time.timeScale = 0;
         }
 
         if(Input.GetKeyDown(KeyCode.Tab))
         {
             inventory.SetActive(true);
-            //Time.timeScale = 0;
+            Time.timeScale = 0;
         }
     }
 

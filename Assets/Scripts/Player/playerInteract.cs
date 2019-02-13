@@ -48,6 +48,7 @@ public class playerInteract : MonoBehaviour {
         //Add to inventory here
         if (item.GetComponent<objectScript>().data.Type == ObjectType.PICKUP) {
             Debug.Log("Pick up " + item.name);
+            item.GetComponent<InventoryItemPickUp>().pickUpItem();
         }
     }
 }
