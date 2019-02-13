@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - inventory
+  - keyDes
+  - description
   layers:
   - Default
   - TransparentFX
@@ -17,9 +20,9 @@ TagManager:
   - UIheart
   - UIbrain
   - items
-  - 
-  - 
-  - 
+  - UIkey
+  - UIaxe
+  - UIarmour
   - 
   - 
   - 
