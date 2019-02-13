@@ -72,7 +72,7 @@ public class Flashlight : MonoBehaviour
             innerLight.enabled = true;
             //update materials to emmisive variants
             transform.GetChild(0).GetComponent<MeshRenderer>().materials = onMatsLOD0and2;
-            transform.GetChild(1).GetComponent<MeshRenderer>().materials = offMatsLOD1;
+            transform.GetChild(1).GetComponent<MeshRenderer>().materials = onMatsLOD1;
             transform.GetChild(2).GetComponent<MeshRenderer>().materials = onMatsLOD0and2;
         }
         else
