@@ -64,7 +64,7 @@ public class uiControler : MonoBehaviour
             Time.timeScale = 0;
         }
 
-        if(Input.GetKeyDown(KeyCode.Tab))
+        if(Input.GetKeyDown(KeyCode.Tab) || Input.GetButtonDown("Jump"))
         {
             inventory.SetActive(true);
             Time.timeScale = 0;

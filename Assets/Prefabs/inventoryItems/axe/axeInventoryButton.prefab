@@ -86,8 +86,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef59aa9687906104c98262bca3025b4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: {fileID: 5520974686542473024, guid: 787b409b2b5721646b5acb3c24b7f034,
-    type: 3}
 --- !u!61 &1421129352058807170
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -127,9 +125,10 @@ GameObject:
   - component: {fileID: 6103882579331811850}
   - component: {fileID: 2204336681493392040}
   - component: {fileID: 5628434657259813483}
+  - component: {fileID: 3925464029411302503}
   m_Layer: 5
   m_Name: axeInventoryButton
-  m_TagString: Untagged
+  m_TagString: axe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,7 +151,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -4.8245726, y: -0.3349381}
-  m_SizeDelta: {x: 100, y: 20}
+  m_SizeDelta: {x: 50, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7631776118413201237
 CanvasRenderer:
@@ -256,3 +255,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca7130ad1050d25448d19b978676a18d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3925464029411302503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8463394374911197827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f759cfb4917d5045839d2b3018f8316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go: 0

@@ -7,6 +7,12 @@ TagManager:
   - inventory
   - keyDes
   - description
+  - armour
+  - armourModel
+  - key
+  - axe
+  - keyModel
+  - axeModel
   layers:
   - Default
   - TransparentFX
