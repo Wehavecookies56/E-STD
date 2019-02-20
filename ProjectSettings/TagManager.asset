@@ -13,6 +13,12 @@ TagManager:
   - axe
   - keyModel
   - axeModel
+  - bookModel
+  - candleModel
+  - featherModel
+  - book
+  - candle
+  - feather
   layers:
   - Default
   - TransparentFX
@@ -29,9 +35,9 @@ TagManager:
   - UIkey
   - UIaxe
   - UIarmour
-  - 
-  - 
-  - 
+  - UIbook
+  - UIcandle
+  - UIfeather
   - 
   - 
   - 

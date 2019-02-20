@@ -25,8 +25,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Speed: 0.2
-    - _Transparency: 0.197
+    - _Transparency: 0.5
     m_Colors:
-    - _Color1: {r: 1, g: 0, b: 0, a: 1}
-    - _Color2: {r: 0, g: 0, b: 1, a: 1}
-    - _TintColor: {r: 0.5833124, g: 0.15419191, b: 0.7264151, a: 1}
+    - _Color1: {r: 1, g: 0, b: 0.9248581, a: 1}
+    - _Color2: {r: 0, g: 1, b: 0.93386865, a: 1}
+    - _TintColor: {r: 1, g: 1, b: 1, a: 1}

@@ -43,5 +43,41 @@ public class spinItem : MonoBehaviour
                 GameObject.FindGameObjectWithTag("axeModel").transform.Rotate(0, 0, 0, Space.World);
             }
         }
+
+        if (gameObject.tag == "book")
+        {
+            if (go == true)
+            {
+                GameObject.FindGameObjectWithTag("bookModel").transform.Rotate(0, 1, 0, Space.World);
+            }
+            else
+            {
+                GameObject.FindGameObjectWithTag("bookModel").transform.Rotate(0, 0, 0, Space.World);
+            }
+        }
+
+        if (gameObject.tag == "candle")
+        {
+            if (go == true)
+            {
+                GameObject.FindGameObjectWithTag("candleModel").transform.Rotate(0, 1, 0, Space.World);
+            }
+            else
+            {
+                GameObject.FindGameObjectWithTag("candleModel").transform.Rotate(0, 0, 0, Space.World);
+            }
+        }
+
+        if (gameObject.tag == "feather")
+        {
+            if (go == true)
+            {
+                GameObject.FindGameObjectWithTag("featherModel").transform.Rotate(0, 1, 0, Space.World);
+            }
+            else
+            {
+                GameObject.FindGameObjectWithTag("featherModel").transform.Rotate(0, 0, 0, Space.World);
+            }
+        }
     }
 }

@@ -51,6 +51,15 @@ public class inventorySelectScript : MonoBehaviour
                 if (slots[counter].transform.GetChild(0).CompareTag("armour"))
                     slots[counter].transform.GetChild(0).GetComponent<onArmourClick>().onClick();
 
+                if (slots[counter].transform.GetChild(0).CompareTag("book"))
+                    slots[counter].transform.GetChild(0).GetComponent<onBookClick>().onClick();
+
+                if (slots[counter].transform.GetChild(0).CompareTag("candle"))
+                    slots[counter].transform.GetChild(0).GetComponent<onCandleClick>().onClick();
+
+                if (slots[counter].transform.GetChild(0).CompareTag("feather"))
+                    slots[counter].transform.GetChild(0).GetComponent<onFeatherClick>().onClick();
+
             }
         }
 

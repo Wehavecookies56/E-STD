@@ -5,7 +5,7 @@ using UnityEngine;
 public class descriptionManager : MonoBehaviour
 {
     public GameObject[] descriptions;
-    public enum descriptionType { KEY, AXE, ARMOUR, };
+    public enum descriptionType { KEY, AXE, ARMOUR, BOOK, CANDLE, FEATHER };
 
     public void activateDescription(descriptionType type)
     {
