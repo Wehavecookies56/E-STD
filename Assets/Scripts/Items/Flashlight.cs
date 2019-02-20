@@ -14,7 +14,7 @@ public class Flashlight : MonoBehaviour
     public Material glassOff;
     public Material glassOn;
 
-    private bool isOn = false;
+    private bool isOn = true;
 
     //material arrays to change between emmisive and non-emissive materials when the light gets toggled
     private Material[] offMatsLOD0and2 = new Material[3];
