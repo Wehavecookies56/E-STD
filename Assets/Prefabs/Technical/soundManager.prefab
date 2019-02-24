@@ -56,4 +56,4 @@ MonoBehaviour:
   - {fileID: 4316142323740016632, guid: 81f2174cf0e29434f9c53d0c36ccef82, type: 3}
   footstepsSound:
   - {fileID: 1700986237711956823, guid: 1f16bf54653ca874fac5ffae41598940, type: 3}
-  MaxFootstepVolume: 1
+  MaxFootstepVolume: 0.25
