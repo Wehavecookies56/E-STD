@@ -13,7 +13,7 @@ public class playerInteract : MonoBehaviour {
     public Transform playerLookCamera;
     //Raycast distance
     public float distance = 500;
-    GameObject lastLookedAt;
+    public GameObject lastLookedAt;
 
     [SerializeField]
     public InteractEvent onInteract;
