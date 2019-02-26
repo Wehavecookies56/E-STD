@@ -191,6 +191,7 @@ public class inventorySelectScript : MonoBehaviour
                 {
                     Destroy((slots[i].transform.GetChild(0).gameObject));
                     Instantiate(axePrefab, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity); //drop le axe
+                    //dropped axe cant be picked up
                     break;  
                 }
             }

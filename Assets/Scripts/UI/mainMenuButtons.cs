@@ -14,7 +14,7 @@ public class mainMenuButtons : MonoBehaviour
 
     public void mainMenuButton()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
     }
 
     public void quitButton()
