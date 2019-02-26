@@ -43,8 +43,8 @@ public class PlayerMovement : MonoBehaviour
     void GetInput()
     {
        
-        xInput = Input.GetAxis("Horizontal") * speed;
-        zInput = Input.GetAxis("Vertical") * speed;
+        xInput = Input.GetAxis("Horizontal") * speed * Time.timeScale;
+        zInput = Input.GetAxis("Vertical") * speed * Time.timeScale;
         if (Input.GetAxisRaw("Joystick X") == 0 && (Input.GetAxisRaw("Joystick Y") == 0))
         {
             xMouse = Input.GetAxis("Mouse X") * mouseSensitivity * Time.timeScale;

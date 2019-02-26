@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class inventorySelectScript : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class inventorySelectScript : MonoBehaviour
     private float timer;
     public float inputDeley;
     private bool complateMove = false;
+
+    //sprites for button affect
+    public Sprite notPressed;
+    public Sprite highlighted;
 
     private void Update()
     {     
@@ -63,7 +68,7 @@ public class inventorySelectScript : MonoBehaviour
             }
         }
 
-        if(Input.GetButtonDown("Jump"))
+        if(Input.GetButtonDown("Fire3"))
         {
             Time.timeScale = 1;
             gameObject.SetActive(false);
@@ -80,13 +85,18 @@ public class inventorySelectScript : MonoBehaviour
             if(slots[i].transform.childCount != 0)
             {
                 slots[i].GetComponentInChildren<spinItem>().go = false;
-            }             
+            }
+
+            slots[i].GetComponent<Image>().sprite = notPressed;
         }
 
         if (slots[index].transform.childCount != 0)
         {
             slots[index].GetComponentInChildren<spinItem>().go = true;
+            
         }
+
+        slots[index].GetComponent<Image>().sprite = highlighted;
     }
     private void switchControl()
     {
