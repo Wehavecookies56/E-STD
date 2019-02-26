@@ -7,7 +7,7 @@ using UnityEngine;
 public class Astar : MonoBehaviour
 {
     //class for holding data for each node
-    private class Node
+    internal class Node
     {
         internal Node(GameObject _physicalNode) //constructor for Node
         {
@@ -28,14 +28,19 @@ public class Astar : MonoBehaviour
 
 
     //an array to hold all pathfinding nodes in the scene
-    private GameObject[] physicalNodes;
+    private List<GameObject> physicalNodes = new List<GameObject>();
     private List<Node> nodes = new List<Node>();
 
     void Start()
     {
         //populate the physicalNodes array with all found node GameObjects in the scene
-        physicalNodes = GameObject.FindGameObjectsWithTag("PathfindingNode");
-        Debug.Log("Found " + physicalNodes.Length + " pathfinding nodes.");
+        for (int childI = 0; childI < transform.childCount; childI++)
+        {
+            if (transform.GetChild(childI).tag == "PathfindingNode")
+                physicalNodes.Add(transform.GetChild(childI).gameObject);
+        }
+
+        Debug.Log("Found " + physicalNodes.Count + " pathfinding nodes.");
 
         //create "virtual" nodes for all physicalNodes
         InitializeNodes();
@@ -196,5 +201,27 @@ public class Astar : MonoBehaviour
         if (n.parentNode != null) //if this node doesn't have a parent it must be the start node
             AddNodeToPath(n.parentNode, path); //if it does have a parent, recursively add that node to the path
         return path; //back out of all calls and return the full path
+    }
+
+    internal GameObject FindNearestNode(Vector3 pos)
+    {
+        //assign first node in list as the current shortest path
+        int nodeIndex = 0;
+        float shortestDistance = Vector3.Distance(pos, nodes[0].physicalNode.transform.position);
+
+        //iterate all nodes
+        for (int n = 1; n < nodes.Count; n++)
+        {
+            float tempDist;
+            //if current node is closer than current closer node, overwrite closest node with current nodes data
+            if ((tempDist = Vector3.Distance(pos, nodes[n].physicalNode.transform.position)) < shortestDistance)
+            {
+                nodeIndex = n;
+                shortestDistance = tempDist;
+            }
+        }
+
+        //return closest node
+        return nodes[nodeIndex].physicalNode;
     }
 }
