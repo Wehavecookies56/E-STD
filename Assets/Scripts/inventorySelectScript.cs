@@ -16,6 +16,9 @@ public class inventorySelectScript : MonoBehaviour
     public Sprite notPressed;
     public Sprite highlighted;
 
+    //axe prefab for drop
+    public GameObject axePrefab;
+
     private void Update()
     {     
         if (Input.GetAxis("JoystickDpadY") < -0.3f)
@@ -142,6 +145,56 @@ public class inventorySelectScript : MonoBehaviour
             case 9:
                 spinTheChild(9);
                 break;
+        }
+    }
+
+    public bool isThereAKey()
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].transform.childCount != 0)
+            {
+                if (slots[i].transform.GetChild(0).gameObject.CompareTag("key"))
+                {
+                    return true;
+                }
+            }
+            
+        }
+
+        return false;
+    }
+
+    public void deleteKey()
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].transform.childCount != 0)
+            {
+                if (slots[i].transform.GetChild(0).gameObject.CompareTag("key"))
+                {
+                    Destroy(slots[i].transform.GetChild(0).gameObject);
+                    break;
+                }
+            }
+
+        }
+    }
+
+    public void dropAxe()
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].transform.childCount != 0)
+            {
+                if (slots[i].transform.GetChild(0).gameObject.CompareTag("axe"))
+                {
+                    Destroy((slots[i].transform.GetChild(0).gameObject));
+                    Instantiate(axePrefab, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity); //drop le axe
+                    break;  
+                }
+            }
+
         }
     }
 }
