@@ -181,6 +181,22 @@ public class inventorySelectScript : MonoBehaviour
         }
     }
 
+    public void deleteArmour()
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].transform.childCount != 0)
+            {
+                if (slots[i].transform.GetChild(0).gameObject.CompareTag("armour"))
+                {
+                    Destroy(slots[i].transform.GetChild(0).gameObject);
+                    break;
+                }
+            }
+
+        }
+    }
+
     public void dropAxe()
     {
         for (int i = 0; i < slots.Length; i++)
