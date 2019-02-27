@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e41edc91136a98240bfbb90a92235f96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.2
+  speed: 4
   fpscamera: {fileID: 4364931474502045280}
   mouseSensitivity: 5
   pitchRange: 85

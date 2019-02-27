@@ -66,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (cc.isGrounded)
         {
+            yspeed = gravity * Time.deltaTime;
             /* if (Input.GetButtonDown("Jump"))
             {
                 yspeed = 15f;
@@ -79,9 +80,9 @@ public class PlayerMovement : MonoBehaviour
         {
             yspeed += gravity * Time.deltaTime;
         }
-        // applys the movement
 
-        cc.Move(move + new Vector3(0, yspeed, 0) * Time.deltaTime);
+        // applies the movement
+        cc.Move((move + new Vector3(0, yspeed, 0)) * Time.deltaTime);
         transform.Rotate(0, xMouse, 0);
         pitch -= yMouse;
         pitch = Mathf.Clamp(pitch, -pitchRange, pitchRange);
