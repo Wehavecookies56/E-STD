@@ -10974,7 +10974,7 @@ PrefabInstance:
     - target: {fileID: 4364931473672630205, guid: 2f1c5bf9314740e43b551b5903b398a3,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4364931473672630192, guid: 2f1c5bf9314740e43b551b5903b398a3,
         type: 3}
@@ -11084,7 +11084,7 @@ PrefabInstance:
     - target: {fileID: 8896367492906035066, guid: 2f1c5bf9314740e43b551b5903b398a3,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -2.1
+      value: -1.239
       objectReference: {fileID: 0}
     - target: {fileID: 8896367492906035066, guid: 2f1c5bf9314740e43b551b5903b398a3,
         type: 3}
@@ -11094,10 +11094,21 @@ PrefabInstance:
     - target: {fileID: 8896367492906035066, guid: 2f1c5bf9314740e43b551b5903b398a3,
         type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -126.563
+      value: -118.203
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364931474502045293, guid: 2f1c5bf9314740e43b551b5903b398a3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f1c5bf9314740e43b551b5903b398a3, type: 3}
+--- !u!1 &1374067876 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4364931474502045293, guid: 2f1c5bf9314740e43b551b5903b398a3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1374067875}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1376232619
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12836,12 +12847,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fac85779e5fda1c4493c6d5276271dde, type: 3}
---- !u!1 &1673390160 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4364931473672630205, guid: 2f1c5bf9314740e43b551b5903b398a3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1374067875}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1682210832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14729,7 +14734,7 @@ MonoBehaviour:
   cutCam: {fileID: 288587522}
   startPos: {fileID: 340739922}
   startCam: {fileID: 1357514720}
-  player: {fileID: 1673390160}
+  player: {fileID: 1374067876}
 --- !u!114 &1920550968
 MonoBehaviour:
   m_ObjectHideFlags: 0
