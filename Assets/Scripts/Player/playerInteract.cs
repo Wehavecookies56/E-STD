@@ -11,6 +11,7 @@ public class InteractEvent : UnityEvent<GameObject> {
 public class playerInteract : MonoBehaviour {
 
     public Transform playerLookCamera;
+    public GameObject inv;
     //Raycast distance
     public float distance = 500;
     public GameObject lastLookedAt;
@@ -50,5 +51,42 @@ public class playerInteract : MonoBehaviour {
             Debug.Log("Pick up " + item.name);
             item.GetComponent<InventoryItemPickUp>().pickUpItem();
         }
+
+        if (item.GetComponent<objectScript>().data.Type == ObjectType.OPEN)
+        {
+            if (item.GetComponent<objectScript>().data.ObjectName.Equals("Door"))
+            {
+
+                if (item.GetComponent<DoorRotate>().needskey)
+                {
+                    if (inv.GetComponent<inventorySelectScript>().isThereAKey() == true)
+                    {
+
+                        item.GetComponent<DoorRotate>().opening = true;
+                        soundManagerScript.audioPlayer.playOnce(soundManagerScript.enviromentSounds.DOOROPEN, item.transform);
+                        item.layer = 1 << LayerMask.NameToLayer("Default");
+                        item.GetComponent<BoxCollider>().isTrigger = true;
+                        inv.GetComponent<inventorySelectScript>().deleteKey();
+                    }
+                }
+                else
+                {
+                    item.GetComponent<DoorRotate>().opening = true;
+                    soundManagerScript.audioPlayer.playOnce(soundManagerScript.enviromentSounds.DOOROPEN, item.transform);
+                    item.layer = 1 << LayerMask.NameToLayer("Default");
+                    item.GetComponent<BoxCollider>().isTrigger = true;
+                }
+            }
+            else if(item.GetComponent<objectScript>().data.ObjectName.Equals("Window"))
+            {
+                item.GetComponent<windowOpenClose>().opening = true;
+                soundManagerScript.audioPlayer.playOnce(soundManagerScript.enviromentSounds.WINDOW, item.transform);
+                item.layer = 1 << LayerMask.NameToLayer("Default");
+               
+            }
+        }
     }
+    
+  
 }
+

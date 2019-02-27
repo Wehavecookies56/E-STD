@@ -19,6 +19,7 @@ TagManager:
   - book
   - candle
   - feather
+  - LockedDoor
   layers:
   - Default
   - TransparentFX
