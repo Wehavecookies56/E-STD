@@ -6,7 +6,7 @@ public class soundManagerScript : MonoBehaviour
 {
     public static soundManagerScript audioPlayer { get; private set; }
 
-    public enum enviromentSounds { DOOROPEN, THUNDER1, THUNDER2, GHOSTSCREAM, POTBREAK, THUNDER3, THUNDER4 };
+    public enum enviromentSounds { DOOROPEN, THUNDER1, THUNDER2, GHOSTSCREAM, POTBREAK, THUNDER3, THUNDER4, WINDOW };
     public GameObject[] enviromentAudio;
 
     public enum backgroundSounds { HORRORLOOP, RAINLOOP };
