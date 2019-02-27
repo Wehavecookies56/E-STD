@@ -20,6 +20,7 @@ TagManager:
   - candle
   - feather
   - blackBox
+  - blackBoxModel
   layers:
   - Default
   - TransparentFX

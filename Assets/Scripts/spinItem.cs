@@ -79,5 +79,17 @@ public class spinItem : MonoBehaviour
                 GameObject.FindGameObjectWithTag("featherModel").transform.Rotate(0, 0, 0, Space.World);
             }
         }
+
+        if (gameObject.tag == "blackBox")
+        {
+            if (go == true)
+            {
+                GameObject.FindGameObjectWithTag("blackBoxModel").transform.Rotate(0, 1, 0, Space.World);
+            }
+            else
+            {
+                GameObject.FindGameObjectWithTag("blackBoxModel").transform.Rotate(0, 0, 0, Space.World);
+            }
+        }
     }
 }

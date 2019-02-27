@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 5462112050761037181}
   m_Layer: 5
   m_Name: blackBoxInventoryButton
-  m_TagString: book
+  m_TagString: blackBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
