@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 434612}
   - component: {fileID: 3329328}
   - component: {fileID: 2346398}
+  - component: {fileID: 7450195967380625733}
+  - component: {fileID: 7729958933407509064}
+  - component: {fileID: 5350599299068593500}
   m_Layer: 0
   m_Name: Villa1_Deco_WindowGlass_A
   m_TagString: Untagged
@@ -77,3 +80,44 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &7450195967380625733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4829b3199df68448ec490ec07ce530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topstop: 1.6
+  speed: 1
+  opening: 0
+--- !u!114 &7729958933407509064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e35ef5b3a2d2a654ebd03e45974e2293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 4b3409d876b45e04a9656c0b5490c8ec, type: 2}
+--- !u!65 &5350599299068593500
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132308}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6828766, y: 3.112173, z: 0.15721592}
+  m_Center: {x: 0, y: 0, z: -0.0000000037252903}

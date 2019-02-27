@@ -6,44 +6,50 @@ public class DoorRotate : MonoBehaviour
 {
     public float anglestop;
     public float speed = 1;
-   
-    // Use this for initialization
-    void Start()
-    {
-      
-    }
+    internal bool opening = false;
+    public bool needskey = false;
 
     // Update is called once per frame
     void Update()
     {
-     
 
-        
-        if(speed < 0)
+        if (opening)
         {
-             if(transform.eulerAngles.y > anglestop)
-             {
-             transform.Rotate(new Vector3(0, Time.deltaTime * speed, 0));
-             }
-             else
-             {
-             transform.eulerAngles = new Vector3(transform.eulerAngles.x, anglestop, transform.eulerAngles.z);
-             }
-        }
-        else
-        {
-            if (transform.eulerAngles.y < anglestop)
+            if (speed < 0)
             {
-                transform.Rotate(new Vector3(0, Time.deltaTime * speed, 0));
+                if (transform.eulerAngles.y > anglestop)
+                {
+                    transform.Rotate(new Vector3(0, Time.deltaTime * speed, 0));
+                }
+                else
+                {
+                    transform.eulerAngles = new Vector3(transform.eulerAngles.x, anglestop, transform.eulerAngles.z);
+                    opening = false;
+                    Destroy(gameObject.GetComponent<DoorRotate>());
+                }
             }
             else
             {
-                transform.eulerAngles = new Vector3(transform.eulerAngles.x, anglestop, transform.eulerAngles.z);
+                if (transform.eulerAngles.y < anglestop)
+                {
+                    transform.Rotate(new Vector3(0, Time.deltaTime * speed, 0));
+                }
+                else
+                {
+                    transform.eulerAngles = new Vector3(transform.eulerAngles.x, anglestop, transform.eulerAngles.z);
+                    opening = false;
+                    Destroy(gameObject.GetComponent<DoorRotate>());
+                    gameObject.GetComponent<BoxCollider>().isTrigger = false;
+                }
             }
+
         }
-      
-    
+
     }
 
-  
+   
+
 }
+       
+
+        
