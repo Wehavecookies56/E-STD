@@ -71,7 +71,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   fpscamera: {fileID: 4364931474502045280}
-  mouseSensitivity: 5
+  mouseSensitivity: 135
   pitchRange: 85
 --- !u!136 &736035600
 CapsuleCollider:

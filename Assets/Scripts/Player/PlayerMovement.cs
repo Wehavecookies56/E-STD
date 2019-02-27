@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform fpscamera;
     float pitch = 0f;
 
-    [Range(5, 15)]
+    [Range(1, 150)]
     public float mouseSensitivity = 10f;
 
     [Range(45, 85)]
@@ -47,13 +47,13 @@ public class PlayerMovement : MonoBehaviour
         zInput = Input.GetAxis("Vertical") * speed * Time.timeScale;
         if (Input.GetAxisRaw("Joystick X") == 0 && (Input.GetAxisRaw("Joystick Y") == 0))
         {
-            xMouse = Input.GetAxis("Mouse X") * mouseSensitivity * Time.timeScale;
-            yMouse = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.timeScale;
+            xMouse = Input.GetAxis("Mouse X") * mouseSensitivity * Time.timeScale * Time.deltaTime;
+            yMouse = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.timeScale * Time.deltaTime;
         } 
         else
         {
-            xMouse = Input.GetAxis("Joystick X") * mouseSensitivity * Time.timeScale;
-            yMouse = Input.GetAxis("Joystick Y") * mouseSensitivity * Time.timeScale;
+            xMouse = Input.GetAxis("Joystick X") * mouseSensitivity * Time.timeScale * Time.deltaTime;
+            yMouse = Input.GetAxis("Joystick Y") * mouseSensitivity * Time.timeScale * Time.deltaTime;
         }
        
     }
