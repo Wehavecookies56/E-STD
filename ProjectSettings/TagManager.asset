@@ -19,7 +19,7 @@ TagManager:
   - book
   - candle
   - feather
-  - LockedDoor
+  - blackBox
   layers:
   - Default
   - TransparentFX
@@ -39,7 +39,7 @@ TagManager:
   - UIbook
   - UIcandle
   - UIfeather
-  - 
+  - UIBlackBox
   - 
   - 
   - 

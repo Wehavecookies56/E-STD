@@ -15,14 +15,11 @@ public class StartGame : MonoBehaviour
         if(Input.anyKeyDown == true)
         {
             //lighing sound
-
+            //TODO
             //lighning prefab activates
-
             //pann the camer to player 
-            cutCam.GetComponent<cutsceneHandler>().StartCutscene(startPos);
-            
+            cutCam.GetComponent<cutsceneHandler>().StartCutscene(startPos);           
             //instaciate the player 
-
             //destroy the canvas
             gameObject.SetActive(false);
             startCam.SetActive(false);
