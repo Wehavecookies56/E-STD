@@ -19,7 +19,7 @@ public class cutsceneHandler : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C)) StartCutscene(GameObject.Find("SampleCutsceneNodes")); //TODO test line, REMOVE BEFORE RELEASE
+       // if (Input.GetKeyDown(KeyCode.C)) StartCutscene(GameObject.Find("SampleCutsceneNodes")); //TODO test line, REMOVE BEFORE RELEASE
         if (!isInCutsceneMode) return; //if not in cutscene mode, don't run anything to do with cutscenes
 
         //if final node has been reached
@@ -65,8 +65,8 @@ public class cutsceneHandler : MonoBehaviour
         }
 
         //move cutscene camera to appropriate position and rotation to start
-        cutsceneCamera.transform.position = cutsceneParentObj.transform.position;
-        cutsceneCamera.transform.rotation = cutsceneParentObj.transform.rotation;
+        cutsceneCamera.transform.position = currentPoints[currentPoints.Count - 1].transform.position;
+        cutsceneCamera.transform.rotation = currentPoints[currentPoints.Count - 1].transform.rotation;
         //init timer
         currentPointTime = 0f;
     }
