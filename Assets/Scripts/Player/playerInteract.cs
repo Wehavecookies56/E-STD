@@ -63,7 +63,7 @@ public class playerInteract : MonoBehaviour {
 
         if (item.GetComponent<objectScript>().data.Type == ObjectType.TOUCH) {
 
-            if (item.GetComponent<objectScript>().data.name.Equals("Vase")) {
+            if (item.GetComponent<objectScript>().data.name.Equals("Vase") || item.GetComponent<objectScript>().data.name.Equals("Plate")) {
                 item.GetComponent<breakVase>().Break();
             }
 
