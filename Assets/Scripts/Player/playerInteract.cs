@@ -59,6 +59,12 @@ public class playerInteract : MonoBehaviour {
             item.GetComponent<InventoryItemPickUp>().pickUpItem();
         }
 
+        if (item.GetComponent<objectScript>().data.Type == ObjectType.TOUCH) {
+            if (item.GetComponent<objectScript>().data.name.Equals("Vase")) {
+                item.GetComponent<breakVase>().Break();
+            }
+        }
+
         if (item.GetComponent<objectScript>().data.Type == ObjectType.OPEN)
         {
             if (item.GetComponent<objectScript>().data.ObjectName.Equals("Door"))
