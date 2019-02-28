@@ -7,14 +7,18 @@ public class breakVase : MonoBehaviour {
     public GameObject broken;
     public GameObject unbroken;
     public GameObject key;
+    bool smashedIt;
 
     public void Break() {
-        broken.SetActive(true);
-        unbroken.SetActive(false);
-        StartCoroutine(disableCollision());
-        soundManagerScript.audioPlayer.playOnce(soundManagerScript.enviromentSounds.POTBREAK, transform);
-        GameObject newKey = Instantiate(key);
-        newKey.transform.position = transform.position;
+        if (!smashedIt) {
+            smashedIt = true;
+            broken.SetActive(true);
+            unbroken.SetActive(false);
+            StartCoroutine(disableCollision());
+            soundManagerScript.audioPlayer.playOnce(soundManagerScript.enviromentSounds.POTBREAK, transform);
+            GameObject newKey = Instantiate(key);
+            newKey.transform.position = transform.position;
+        }
     }
 
     private IEnumerator disableCollision() {
