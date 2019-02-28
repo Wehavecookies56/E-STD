@@ -7,12 +7,13 @@ public class playerLiftObjects : MonoBehaviour
 {
     public GameObject cameraGO;
     public GameObject liftSlot;
+    public LayerMask layer;
     public float pickupDistance;
     public float throwStrength;
     
     private ConfigurableJoint joint;
     private float defaultBreakForce;
-    private float grabHeight = 0.1f;
+    private float grabHeight = 0.05f;
 
     //input vars
     private const float liftButtonRequredTime = 0.8f;
@@ -56,7 +57,7 @@ public class playerLiftObjects : MonoBehaviour
                 {
                     //cast a ray at what the player is looking (within range)
                     RaycastHit[] hits;
-                    hits = Physics.RaycastAll(cameraGO.transform.position, cameraGO.transform.TransformDirection(Vector3.forward), pickupDistance);
+                    hits = Physics.RaycastAll(cameraGO.transform.position, cameraGO.transform.TransformDirection(Vector3.forward), pickupDistance, layer);
 
                     //check all hit colliders
                     foreach (RaycastHit hit in hits)
