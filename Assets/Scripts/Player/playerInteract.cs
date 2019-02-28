@@ -16,6 +16,8 @@ public class playerInteract : MonoBehaviour {
     public float distance = 500;
     public GameObject lastLookedAt;
 
+    public LayerMask mask;
+
     [SerializeField]
     public InteractEvent onInteract;
 
@@ -29,7 +31,7 @@ public class playerInteract : MonoBehaviour {
         //Raycast from camera
         var r = new Ray(playerLookCamera.position, playerLookCamera.forward);
         //Raycast only for objects with items layer
-        if (Physics.Raycast(r, out rh, distance)) {
+        if (Physics.Raycast(r, out rh, distance, mask)) {
             if (1 << rh.transform.gameObject.layer == 1 << LayerMask.NameToLayer("items")) {
                 GameObject lookedAt = rh.transform.gameObject;
                 lastLookedAt = lookedAt;
