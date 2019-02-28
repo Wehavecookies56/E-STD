@@ -10,7 +10,7 @@ public class DoorRotate : MonoBehaviour
     public bool needskey = false;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         if (opening)
