@@ -18,6 +18,8 @@ public class soundManagerScript : MonoBehaviour
     private GameObject footstepsInstance;
     bool created = false;
 
+    private GameObject sanityAudio;
+
     private void Awake()
     {
         if (audioPlayer == null)
@@ -37,6 +39,11 @@ public class soundManagerScript : MonoBehaviour
         startLoop(backgroundSounds.RAINLOOP, gameObject.transform);
     }
 
+    private void Update()
+    {
+        setSanityAudioVolume();
+    }
+
     public void playOnce(enviromentSounds sound, Transform position)
     {
         GameObject instance = Instantiate(enviromentAudio[(int)sound]);
@@ -47,6 +54,10 @@ public class soundManagerScript : MonoBehaviour
     public void startLoop(backgroundSounds sound, Transform parent)
     {
         GameObject instance = Instantiate(backroundSounds[(int)sound]);
+        if(sound == backgroundSounds.HORRORLOOP)
+        {
+            sanityAudio = instance;
+        }
         instance.transform.SetParent(parent);
     }
 
@@ -70,6 +81,10 @@ public class soundManagerScript : MonoBehaviour
         }
     }
 
+    public void setSanityAudioVolume()
+    {
+        sanityAudio.GetComponent<AudioSource>().volume = 0.6f - (playerData.INSTANCE.Sanity / 10);
+    }
     
 
 }

@@ -46,12 +46,14 @@ public class uiControler : MonoBehaviour
         getHurtRed.GetComponent<Image>().color = hurtPannelColour;
 
         //crazy ui
+
+        /*
         sanityColour.a = 0.6f - (playerData.INSTANCE.Sanity / 10);
         sanityPannel.GetComponent<Image>().color = sanityColour;
         sanityColour = sanityDrain.GetComponent<Image>().color;
         sanityColour.a = 1 - (playerData.INSTANCE.Sanity / 10);
         sanityDrain.GetComponent<Image>().color = sanityColour;
-        
+        */
 
     }
 
