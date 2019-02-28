@@ -41,8 +41,8 @@ TagManager:
   - UIcandle
   - UIfeather
   - UIBlackBox
-  - 
-  - 
+  - PlayerLightCollider
+  - PlayerLightColliderPLAYER
   - 
   - 
   - 

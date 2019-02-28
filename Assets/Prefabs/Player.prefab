@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 4364931473672630205}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.64, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_Children:
   - {fileID: 4364931475556060308}
   - {fileID: 4364931474502045280}
@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e41edc91136a98240bfbb90a92235f96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 3.5
   fpscamera: {fileID: 4364931474502045280}
   mouseSensitivity: 135
   pitchRange: 85
@@ -136,7 +136,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerLookCamera: {fileID: 4364931474502045280}
-  distance: 500
+  inv: {fileID: 0}
+  distance: 5
   lastLookedAt: {fileID: 0}
   onInteract:
     m_PersistentCalls:
@@ -190,7 +191,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4364931474502045280
 Transform:
   m_ObjectHideFlags: 0
@@ -498,7 +499,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0.1, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 4.7399983, y: 1.4719999, z: 12.623}
+  m_ConnectedAnchor: {x: -1.239, y: 4.113, z: -118.203}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 1
