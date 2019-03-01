@@ -8,6 +8,7 @@ public class DoorRotate : MonoBehaviour
     public float speed = 1;
     internal bool opening = false;
     public bool needskey = false;
+    public bool needsAxe = false;
 
     // Update is called once per frame
     void FixedUpdate()

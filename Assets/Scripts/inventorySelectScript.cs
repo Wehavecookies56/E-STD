@@ -185,6 +185,23 @@ public class inventorySelectScript : MonoBehaviour
         return false;
     }
 
+    public bool isThereAxe()
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].transform.childCount != 0)
+            {
+                if (slots[i].transform.GetChild(0).gameObject.CompareTag("axe"))
+                {
+                    return true;
+                }
+            }
+
+        }
+
+        return false;
+    }
+
     public void deleteKey()
     {
         for (int i = 0; i < slots.Length; i++)
@@ -238,7 +255,9 @@ public class inventorySelectScript : MonoBehaviour
                 if (slots[i].transform.GetChild(0).gameObject.CompareTag("axe"))
                 {
                     Destroy((slots[i].transform.GetChild(0).gameObject));
-                    Instantiate(axePrefab, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity); //drop le axe
+                    GameObject player = GameObject.FindGameObjectWithTag("Player");
+                    Vector3 pos = new Vector3(player.transform.position.x-3f, player.transform.position.y, player.transform.position.z);
+                    Instantiate(axePrefab, pos, Quaternion.identity); //drop le axe
                     //dropped axe cant be picked up
                     break;  
                 }

@@ -6,6 +6,26 @@ public class soundManagerScript : MonoBehaviour
 {
     public static soundManagerScript audioPlayer { get; private set; }
 
+    //demon sounds
+    public enum demonSounds { CONTRACT, BREAKME, IAMTHEFLOOR, INSIST, HA, THANKYOU, WHATINEED };
+    public GameObject[] demonAudio;
+
+    //boy and priest
+    public enum boyAndPriest { BOY1, PRIEST2, BOY2 };
+    public GameObject[] boyPriestAudio;
+
+    //old man and priest
+    public enum oldManAndPriest { OLDMAN1, PRIEST2 , OLDMAN3, PRIEST4, OLDMAN5, PRIEST6, OLDMAN7};
+    public GameObject[] oldManPriestAudio;
+
+    //lawyer priest
+    public enum lawyerAndPriest {LAWYER1, PRIEST2, LAWYER3, PRIEST4, LAWYER5 };
+    public GameObject[] lawyerAndPriestAudio;
+
+    //priestSounds
+    public enum Priest { PRARE1, PRARE2, JHONNY };
+    public GameObject[] PriestAudio;
+
     public enum enviromentSounds { DOOROPEN, THUNDER1, THUNDER2, GHOSTSCREAM, POTBREAK, THUNDER3, THUNDER4, WINDOW };
     public GameObject[] enviromentAudio;
 
@@ -51,6 +71,42 @@ public class soundManagerScript : MonoBehaviour
         instance = null;
     }
 
+    public void dialogPlay(demonSounds sound, Transform position)
+    {
+        GameObject instance = Instantiate(demonAudio[(int)sound]);
+        instance.transform.position = transform.position;
+        instance = null;
+    }
+    //=====================================================================
+
+    public void dialogPlay(boyAndPriest sound, Transform position)
+    {
+        GameObject instance = Instantiate(boyPriestAudio[(int)sound]);
+        instance.transform.position = transform.position;
+        instance = null;
+    }
+
+    public void dialogPlay(lawyerAndPriest sound, Transform position)
+    {
+        GameObject instance = Instantiate(lawyerAndPriestAudio[(int)sound]);
+        instance.transform.position = transform.position;
+        instance = null;
+    }
+
+    public void dialogPlay(oldManAndPriest sound, Transform position)
+    {
+        GameObject instance = Instantiate(oldManPriestAudio[(int)sound]);
+        instance.transform.position = transform.position;
+        instance = null;
+    }
+
+    public void dialogPlay(Priest sound, Transform position)
+    {
+        GameObject instance = Instantiate(PriestAudio[(int)sound]);
+        instance.transform.position = transform.position;
+        instance = null;
+    }
+    //============================================================================
     public void startLoop(backgroundSounds sound, Transform parent)
     {
         GameObject instance = Instantiate(backroundSounds[(int)sound]);
