@@ -28,7 +28,7 @@ public class LightPlayerDetector : MonoBehaviour
             //lerp intensity towards 0
             l.intensity = Mathf.Lerp(l.intensity, 0f, lightLerpSpeed * Time.deltaTime);
             //if intensity is under 10% of desired intensity..
-            if (l.intensity < lightIntensity * 0.05f)
+            if (l.intensity < lightIntensity * 0.01f)
                 //..disable the light
                 l.enabled = false;
         }
