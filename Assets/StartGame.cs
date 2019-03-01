@@ -15,13 +15,7 @@ public class StartGame : MonoBehaviour
     {
         if(Input.anyKeyDown == true)
         {
-            //lighing sound
-            //TODO
-            //lighning prefab activates
-            //pann the camer to player 
             cutCam.GetComponent<cutsceneHandler>().StartCutscene(startPos);
-            //instaciate the player 
-            //destroy the canvas
             for (int i = 0; i < lightning.Length; i++)
             {
                 lightning[i].GetComponent<LightningTriggerer>().CreateLightning();

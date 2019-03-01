@@ -168,6 +168,23 @@ public class inventorySelectScript : MonoBehaviour
         return false;
     }
 
+    public bool isThereArmour()
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].transform.childCount != 0)
+            {
+                if (slots[i].transform.GetChild(0).gameObject.CompareTag("armour"))
+                {
+                    return true;
+                }
+            }
+
+        }
+
+        return false;
+    }
+
     public void deleteKey()
     {
         for (int i = 0; i < slots.Length; i++)
@@ -177,6 +194,17 @@ public class inventorySelectScript : MonoBehaviour
                 if (slots[i].transform.GetChild(0).gameObject.CompareTag("key"))
                 {
                     Destroy(slots[i].transform.GetChild(0).gameObject);
+
+                    for (int ii = 0; ii < slots.Length; ii++)
+                    {
+                        if (slots[ii].transform.childCount != 0)
+                        {
+                            slots[ii].GetComponentInChildren<spinItem>().go = false;
+                        }
+
+                        slots[ii].GetComponent<Image>().sprite = notPressed;
+                    }
+
                     break;
                 }
             }
@@ -193,6 +221,7 @@ public class inventorySelectScript : MonoBehaviour
                 if (slots[i].transform.GetChild(0).gameObject.CompareTag("armour"))
                 {
                     Destroy(slots[i].transform.GetChild(0).gameObject);
+
                     break;
                 }
             }
