@@ -19,9 +19,13 @@ public class TestAI : MonoBehaviour
 
     public GameObject pathfinderGO;
     private Astar pathfinder;
+
+    Animator anim;
     
     void Start()
     {
+        anim = GetComponent<Animator>();
+        anim.SetFloat("movespeed", speed);
         //get reference to it's own rigidbody
         rb = GetComponent<Rigidbody>();
         //get reference to the pathfinder object for the desired pathfinding net (specifying a different pathfinding object will result in the use of a different network of nodes, children of that object)
@@ -46,6 +50,7 @@ public class TestAI : MonoBehaviour
         {
             //move towards the first node in the path
             rb.MovePosition(Vector3.MoveTowards(rb.position, movementPath[0].transform.position, Time.deltaTime * speed));
+            //transform.LookAt(movementPath[0].transform.position);
 
             //check if the node has been reached
             if (Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.z), new Vector3(movementPath[0].transform.position.x, 0, movementPath[0].transform.position.z)) < pathfindingNodeContactPadding)

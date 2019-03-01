@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class soundManagerScript : MonoBehaviour
 
     //demon sounds
     public enum demonSounds { CONTRACT, BREAKME, IAMTHEFLOOR, INSIST, HA, THANKYOU, WHATINEED };
+
     public GameObject[] demonAudio;
 
     //boy and priest
