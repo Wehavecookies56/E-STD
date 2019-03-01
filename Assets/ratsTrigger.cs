@@ -10,6 +10,7 @@ public class ratsTrigger : MonoBehaviour
         {
             soundManagerScript.audioPlayer.dialogPlay(soundManagerScript.demonSounds.RATS, gameObject.transform);
             StartCoroutine(waitThenPray());
+            gameObject.SetActive(false);
         }
     }
 

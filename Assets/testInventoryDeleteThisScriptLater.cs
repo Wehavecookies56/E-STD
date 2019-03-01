@@ -12,6 +12,7 @@ public class testInventoryDeleteThisScriptLater : MonoBehaviour
         {
             inventory.GetComponent<inventorySelectScript>().dropAxe();
             playerData.INSTANCE.Health -= 2;
+            gameObject.SetActive(false);
         }
     }
 }
