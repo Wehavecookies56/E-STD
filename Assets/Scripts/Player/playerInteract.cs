@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -58,17 +59,26 @@ public class playerInteract : MonoBehaviour {
     public void pickUpItem(GameObject item) {
         //Add to inventory here
         if (item.GetComponent<objectScript>().data.Type == ObjectType.PICKUP) {
-            Debug.Log("Pick up " + item.name);
+            if (item.GetComponent<objectScript>().data.ObjectName.Equals("Book")) {
+                soundManagerScript.audioPlayer.dialogPlay(soundManagerScript.demonSounds.IAMTHEFLOOR, item.transform);
+            }
             item.GetComponent<InventoryItemPickUp>().pickUpItem();
+        }
+
+        if (item.GetComponent<objectScript>().data.Type == ObjectType.TALK) {
+            if (item.GetComponent<objectScript>().data.ObjectName.Equals("Morpheus")) {
+                npcTalk t = item.GetComponent<npcTalk>();
+                t.playDialog((soundManagerScript.lawyerAndPriest)t.currentLine);
+            }
         }
 
         if (item.GetComponent<objectScript>().data.Type == ObjectType.TOUCH) {
 
-            if (item.GetComponent<objectScript>().data.name.Equals("Vase") || item.GetComponent<objectScript>().data.name.Equals("Plate")) {
+            if (item.GetComponent<objectScript>().data.ObjectName.Equals("Vase") || item.GetComponent<objectScript>().data.name.Equals("Plate")) {
                 item.GetComponent<breakVase>().Break();
             }
 
-            if (item.GetComponent<objectScript>().data.name.Equals("mirror"))
+            if (item.GetComponent<objectScript>().data.ObjectName.Equals("mirror"))
             {
                 item.GetComponent<mirrorOnClick>().OnClick();
             }

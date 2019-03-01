@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum ObjectType {
-    OPEN, PICKUP, TOUCH
+    OPEN, PICKUP, TOUCH, TALK, SEARCH
 }
 
 [CreateAssetMenu(fileName = "Data", menuName = "CustomData/InteractiveObject", order = 1)]
