@@ -31,7 +31,7 @@ public class Astar : MonoBehaviour
     private List<GameObject> physicalNodes = new List<GameObject>();
     private List<Node> nodes = new List<Node>();
 
-    void Start()
+    void Awake()
     {
         //populate the physicalNodes array with all found node GameObjects in the scene
         for (int childI = 0; childI < transform.childCount; childI++)
