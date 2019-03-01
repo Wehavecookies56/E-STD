@@ -9,6 +9,7 @@ public class mirrorOnClick : MonoBehaviour
     private Transform startPos;
     public Transform endPos;
     private bool go = false;
+    private bool speak = true;
 
     private void Start()
     {
@@ -29,6 +30,8 @@ public class mirrorOnClick : MonoBehaviour
                 go = false;
             }
         }
+
+        
         
     }
 
@@ -38,7 +41,24 @@ public class mirrorOnClick : MonoBehaviour
         {
             go = true;
             inventory.GetComponent<inventorySelectScript>().deleteArmour();
+            
         }
+        else
+        {
+            if(speak)
+            {
+                soundManagerScript.audioPlayer.dialogPlay(soundManagerScript.demonSounds.WHATINEED, transform);
+                speak = false;
+                StartCoroutine(resetSpeak());
+            }
+            
+        }
+    }
+
+    IEnumerator resetSpeak()
+    {
+        yield return new WaitForSeconds(1.5f);
+        speak = true;
     }
 
 }
