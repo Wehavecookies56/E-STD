@@ -83,12 +83,19 @@ public class playerInteract : MonoBehaviour {
                 {
                     if (inv.GetComponent<inventorySelectScript>().isThereAKey() == true)
                     {
-
                         item.GetComponent<DoorRotate>().opening = true;
                         soundManagerScript.audioPlayer.playOnce(soundManagerScript.enviromentSounds.DOOROPEN, item.transform);
                         item.layer = 1 << LayerMask.NameToLayer("Default");
                         item.GetComponent<BoxCollider>().isTrigger = true;
                         inv.GetComponent<inventorySelectScript>().deleteKey();
+                    }
+                }
+                else if(item.GetComponent<DoorRotate>().needsAxe)
+                {
+                    if (inv.GetComponent<inventorySelectScript>().isThereAxe())
+                    {
+                        GameObject.FindGameObjectWithTag("heresJhonny").GetComponent<cutsceneHandler>().StartCutscene(GameObject.FindGameObjectWithTag("jhonnysDad"));
+                       //break door here
                     }
                 }
                 else
@@ -103,12 +110,10 @@ public class playerInteract : MonoBehaviour {
             {
                 item.GetComponent<windowOpenClose>().opening = true;
                 soundManagerScript.audioPlayer.playOnce(soundManagerScript.enviromentSounds.WINDOW, item.transform);
-                item.layer = 1 << LayerMask.NameToLayer("Default");
-               
+                item.layer = 1 << LayerMask.NameToLayer("Default");        
             }
         }
     }
-    
   
 }
 
