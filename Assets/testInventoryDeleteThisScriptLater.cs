@@ -10,11 +10,6 @@ public class testInventoryDeleteThisScriptLater : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            if(inventory.GetComponent<inventorySelectScript>().isThereAKey() == true)
-            {
-                inventory.GetComponent<inventorySelectScript>().deleteKey();
-            }
-
             inventory.GetComponent<inventorySelectScript>().dropAxe();
         }
     }

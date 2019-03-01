@@ -21,6 +21,8 @@ TagManager:
   - feather
   - blackBox
   - blackBoxModel
+  - heresJhonny
+  - jhonnysDad
   layers:
   - Default
   - TransparentFX
