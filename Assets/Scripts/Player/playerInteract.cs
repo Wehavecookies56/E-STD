@@ -65,10 +65,31 @@ public class playerInteract : MonoBehaviour {
             item.GetComponent<InventoryItemPickUp>().pickUpItem();
         }
 
+        if (item.GetComponent<objectScript>().data.Type == ObjectType.SEARCH) {
+            if (item.GetComponent<objectScript>().data.ObjectName.Equals("Strange Plant")) {
+                soundManagerScript.audioPlayer.playOnce(soundManagerScript.enviromentSounds.GHOSTSCREAM, transform);
+                playerData.INSTANCE.Health -= 1;
+                item.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.SetColor("_EmissionColor", new Color(0, 0, 0));
+                item.GetComponent<BoxCollider>().enabled = false;
+            }
+        }
+
         if (item.GetComponent<objectScript>().data.Type == ObjectType.TALK) {
             if (item.GetComponent<objectScript>().data.ObjectName.Equals("Morpheus")) {
                 npcTalk t = item.GetComponent<npcTalk>();
                 t.playDialog((soundManagerScript.lawyerAndPriest)t.currentLine);
+            }
+            if (item.GetComponent<objectScript>().data.ObjectName.Equals("Old Man")) {
+                npcTalk t = item.GetComponent<npcTalk>();
+                t.playDialog((soundManagerScript.oldManAndPriest)t.currentLine);
+                if (t.currentLine+1 == t.lineCount) {
+                    item.GetComponent<TestAI>().enabled = true;
+                }
+            }
+
+            if (item.GetComponent<objectScript>().data.ObjectName.Equals("Boy")) {
+                npcTalk t = item.GetComponent<npcTalk>();
+                t.playDialog((soundManagerScript.boyAndPriest)t.currentLine);
             }
         }
 
