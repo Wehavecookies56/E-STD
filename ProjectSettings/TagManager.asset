@@ -45,7 +45,7 @@ TagManager:
   - UIBlackBox
   - PlayerLightCollider
   - PlayerLightColliderPLAYER
-  - 
+  - NoCollision
   - 
   - 
   - 
