@@ -8,7 +8,7 @@ public class soundManagerScript : MonoBehaviour
     public static soundManagerScript audioPlayer { get; private set; }
 
     //demon sounds
-    public enum demonSounds { CONTRACT, BREAKME, IAMTHEFLOOR, INSIST, HA, THANKYOU, WHATINEED };
+    public enum demonSounds { CONTRACT, BREAKME, IAMTHEFLOOR, INSIST, HA, THANKYOU, WHATINEED, RATS };
 
     public GameObject[] demonAudio;
 

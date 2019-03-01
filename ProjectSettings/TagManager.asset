@@ -25,6 +25,8 @@ TagManager:
   - jhonnysDad
   - doorParts
   - jhonnyDoor
+  - PathfindingNode
+  - plate
   layers:
   - Default
   - TransparentFX

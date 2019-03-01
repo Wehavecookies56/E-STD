@@ -23,6 +23,11 @@ public class InventoryItemPickUp : MonoBehaviour
                 inventory.isFull[i] = true;
                 Instantiate(inventoryItemPartner, inventory.slots[i].transform, false);
                 Destroy(gameObject);
+                //just for the candle
+                if(gameObject.name == "blackCandle")
+                {
+                   //TODO play screems 
+                }
                 break;
             }
         }

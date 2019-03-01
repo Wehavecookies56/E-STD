@@ -11,6 +11,7 @@ public class testInventoryDeleteThisScriptLater : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             inventory.GetComponent<inventorySelectScript>().dropAxe();
+            playerData.INSTANCE.Health -= 2;
         }
     }
 }
