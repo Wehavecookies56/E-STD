@@ -23,6 +23,8 @@ TagManager:
   - blackBoxModel
   - heresJhonny
   - jhonnysDad
+  - doorParts
+  - jhonnyDoor
   layers:
   - Default
   - TransparentFX

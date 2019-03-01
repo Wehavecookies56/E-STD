@@ -10,6 +10,7 @@ public class InteractEvent : UnityEvent<GameObject> {
 
 public class playerInteract : MonoBehaviour {
 
+    public GameObject doorParts;
     public Transform playerLookCamera;
     public GameObject inv;
     //Raycast distance
@@ -95,7 +96,9 @@ public class playerInteract : MonoBehaviour {
                     if (inv.GetComponent<inventorySelectScript>().isThereAxe())
                     {
                         GameObject.FindGameObjectWithTag("heresJhonny").GetComponent<cutsceneHandler>().StartCutscene(GameObject.FindGameObjectWithTag("jhonnysDad"));
-                       //break door here
+                        soundManagerScript.audioPlayer.dialogPlay(soundManagerScript.Priest.JHONNY, GameObject.FindGameObjectWithTag("Player").transform);
+                        doorParts.SetActive(true);
+                        GameObject.FindGameObjectWithTag("jhonnyDoor").SetActive(false);
                     }
                 }
                 else
