@@ -59,13 +59,13 @@ public class TestAI : MonoBehaviour
                 movementPath.RemoveAt(0);
             }
         }
-        else //TODO test - force to go to a new node
+        /*else //TODO test - force to go to a new node
         {
             GoToLocation(new Vector3(Random.Range(-7f, 6f), 0, Random.Range(-9f, 7f)));
             //debug option to place an object over the endNode
             if (DEBUGPOSOBJ != null)
                 DEBUGPOSOBJ.transform.position = endNode.transform.position; DEBUGPOSOBJ.transform.Translate(0, 3f, 0);
-        }
+        }*/
     }
 
     //find a path from current position to target via nodes
