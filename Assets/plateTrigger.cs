@@ -9,6 +9,7 @@ public class plateTrigger : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             soundManagerScript.audioPlayer.dialogPlay(soundManagerScript.demonSounds.BREAKME, GameObject.FindGameObjectWithTag("plate").transform);
+            gameObject.SetActive(false);
         }
     }
 }
