@@ -43,7 +43,7 @@ public class Flashlight : MonoBehaviour
     void Update()
     {
         //TODO test input, need to be moved to player scripts
-        if(Input.GetKeyDown(KeyCode.T))
+        if(Input.GetButtonDown("Fire2"))
         {
             ToggleLight();
         }
